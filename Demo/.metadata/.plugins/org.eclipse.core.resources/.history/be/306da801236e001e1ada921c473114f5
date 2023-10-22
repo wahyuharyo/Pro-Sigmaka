@@ -1,0 +1,12 @@
+package com.haryo;
+
+
+@Controller
+public class AddController {
+
+	@RequestMapping("/add")
+	public void add()
+	{
+		System.out.println("ImHere");
+	}
+}

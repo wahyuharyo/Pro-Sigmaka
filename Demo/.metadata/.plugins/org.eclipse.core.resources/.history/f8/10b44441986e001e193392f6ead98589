@@ -1,0 +1,32 @@
+package com.haryo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@Controller
+public class AddController {
+
+	@RequestMapping("/Add")
+	public ModelAndView add(HttpServletRequest request, HttpServletResponse response) {
+		String nama = request.getParameter("nama");
+		String nim	= request.getParameter("nim");
+		String alamat = request.getParameter("alamat");
+		String tgl_lahir = request.getParameter("tgl_lahir");
+//		int day = Integer.parseInt(request.getParameter("day"));
+//		int month = Integer.parseInt(request.getParameter("month"));
+//		int year = Integer.parseInt(request.getParameter("year"));
+		
+		Mahasiswa m = new Mahasiswa(nama, nim, tgl_lahir, alamat);
+		
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("display.jsp");
+		mv.addObject("result", m);
+		
+		return mv;
+	}
+}

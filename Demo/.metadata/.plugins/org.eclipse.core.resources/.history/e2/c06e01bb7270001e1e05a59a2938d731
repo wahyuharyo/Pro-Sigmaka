@@ -1,0 +1,41 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.example.demo.model.Mahasiswa;
+import com.example.demo.service.MahasiswaService;
+
+@Controller
+public class MahasiswaController {
+
+	@Autowired
+	private MahasiswaService mahasiswaService;
+	
+	// display list of mahasiswas
+	@GetMapping("/")
+	public String ViewHomePage(Model model) {
+		model.addAttribute("listMahasiswas", mahasiswaService.getAllMahasiswas());
+		return "index";
+	}
+	
+	@GetMapping("/showNewMahasiswaForm")
+	public String showNewMahasiswaForm(Model model) {
+		//create model attribute to bind from data
+		Mahasiswa mahasiswa = new Mahasiswa();
+		model.addAttribute("mahasiswa", mahasiswa);
+		return "new_mahasiswa";
+	}
+	
+	@PostMapping("/saveMahasiswa")
+	public String saveMahasiswa(@ModelAttribute("mahasiswa") Mahasiswa mahasiswa) {
+		// save mahasiswa to database
+		mahasiswaService.saveMahasiswa(mahasiswa);
+		return "redirect:/";
+	}
+	
+}

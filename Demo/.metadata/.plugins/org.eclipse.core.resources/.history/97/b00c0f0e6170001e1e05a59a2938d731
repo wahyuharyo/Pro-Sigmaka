@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Daftar Mahasiswa</title>
+</head>
+<body>
+
+<div align="center">
+	<h1>Mahasiswa List</h1>
+	<table class="table">
+		<thead class="table-light">
+			<tr>
+				<th>Nomor Induk Mahasiswa</th>
+				<th>Nama Lengkap</th>
+				<th>Tanggal Lahir</th>
+				<th>Alamat</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="mahasiswa : ${ListMahasiswas}">
+				<td th:text="${mahaiswa.nim}"></td>
+				<td th:text="${mahaiswa.nama}"></td>
+				<td th:text="${mahaiswa.tglLahir}"></td>
+				<td th:text="${mahaiswa.alamat}"></td>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

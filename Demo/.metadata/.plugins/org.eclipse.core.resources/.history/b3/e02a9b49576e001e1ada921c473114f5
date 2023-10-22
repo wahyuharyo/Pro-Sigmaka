@@ -1,0 +1,50 @@
+package com.haryo;
+
+public class MyDate {
+	private int day;
+    private int month;
+    private int year;
+
+    public MyDate(int day, int month, int year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    }
+
+    // ===== GETTER =====
+
+
+    public int getDay() {
+        return day;
+    }
+    public int getMonth() {
+        return month;
+    }
+    public int getYear() {
+        return year;
+    }
+
+    // ===== SETTER ======
+
+
+    public void setDay(int tanggal) throws Exception {
+        if(tanggal < 1) throw new Exception("Tanggal tidak boleh 0 dan minus");
+        this.day = tanggal;
+    }
+    public void setMonth(int bulan) throws Exception {
+        if(bulan<1) throw new Exception("Bulan tidak boleh 0 dan negatif");
+        if(bulan>12) throw new Exception("Bulan tidak boleh lebih dari 12");
+        month = bulan;
+    }
+    public void setYear(int tahun) throws Exception {
+        if(tahun<1) throw new Exception("year tidak boleh 0 dan negatif");
+        year = tahun;
+    }
+
+    // ===== OUTPUT =====
+
+    @Override
+    public String toString() {
+        return day + "/" + month + "/" + year ;
+    }
+}

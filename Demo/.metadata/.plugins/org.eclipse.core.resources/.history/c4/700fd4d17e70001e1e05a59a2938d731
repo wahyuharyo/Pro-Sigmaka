@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div class="container">
+		<h1> Mahasiswa Management System</h1>
+		<hr>
+		<h2>Update Mahasiswa</h2>
+	
+		<form action="#" th:action="@{/saveMahasiswa}" th:object ="${mahasiswa}", method="POST">
+			<input type="text" th:field ="${mahasiswa.nim}" class="form-control mb-4 col-4">
+			<input type="text" th:field ="${mahasiswa.nama}"  class="form-control mb-4 col-4">
+			<input type="text" th:field ="${mahasiswa.tglLahir}" class="form-control mb-4 col-4">
+			<input type="text" th:field ="${mahasiswa.alamat}" class="form-control mb-4 col-4">	
+		
+			<button type="submit" class="btn btn-info col-2"> Save Mahasiswa </button>
+		</form>
+	</div>
+
+</body>
+</html>

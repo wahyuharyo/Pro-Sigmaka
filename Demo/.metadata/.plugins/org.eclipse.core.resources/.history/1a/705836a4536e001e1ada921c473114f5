@@ -1,0 +1,44 @@
+package com.haryo;
+
+public class Mahasiswa {
+	private String nama;
+    private int nim;
+    private MyDate tglLahir;
+
+    public Mahasiswa(String nama, int nim, MyDate tglLahir) {
+        this.nama = nama;
+        this.nim = nim;
+        this.tglLahir = tglLahir;
+    }
+
+    // ===== GETTER =====
+
+    public String getNama() {
+        return nama;
+    }
+
+    public int getNim() {
+        return nim;
+    }
+
+    public MyDate getTglLahir() {
+        return tglLahir;
+    }
+
+
+    // ===== SETTER =====
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+    public void setNim(int nim) {
+        this.nim = nim;
+    }
+    public void setTglLahir(MyDate tglLahir) {
+        this.tglLahir = tglLahir;
+    }
+
+    // ===== OUTPUT =====
+    public String toString() {
+        return "Nama: " + nama + "\n" + "NIM: " + nim + "\n" + "Tanggal Lahir: " + tglLahir;    }
+}

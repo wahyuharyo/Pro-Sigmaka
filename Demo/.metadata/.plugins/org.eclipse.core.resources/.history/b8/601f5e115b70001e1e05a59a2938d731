@@ -1,0 +1,20 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import com.example.demo.service.MahasiswaService;
+
+@Controller
+public class MahasiswaController {
+
+	@Autowired
+	private MahasiswaService mahasiswaService;
+	
+	// display list of Mahasiswa
+	public String ViewHomePage(Model model) {
+		model.addAttribute("listMahasiswas", mahasiswaService.getAllMahasiswas());
+		return "index";
+	}
+}

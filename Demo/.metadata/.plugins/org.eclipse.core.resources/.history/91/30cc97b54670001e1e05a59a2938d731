@@ -1,0 +1,8 @@
+package com.example.demo.model;
+
+public class Mahasiswa {
+	private String nim;
+	private String nama;
+	private String tglLahir;
+	private String alamat;
+}

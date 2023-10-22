@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Sat Oct 21 01:20:04 ICT 2023
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\haryo\\.m2\\repository\\org\\springframework\\spring-web\\6.0.11\\spring-web-6.0.11.jar=C\:\\Users\\haryo\\Downloads\\Programs\\apache-tomcat-10.1.15\\wtpwebapps\\Form\\WEB-INF\\lib\\spring-web-6.0.11.jar
+org.eclipse.jst.jee.server\:Form=C\:\\Users\\haryo\\Downloads\\Programs\\apache-tomcat-10.1.15\\wtpwebapps\\Form
